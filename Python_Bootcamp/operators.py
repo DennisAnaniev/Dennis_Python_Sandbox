@@ -1,0 +1,9 @@
+# Arithmetic operators
+print(5 + 5)
+print(5 - 5)
+print(5 * 5)
+print(5 / 5)
+print(5 // 5)
+print(5 % 5)
+print(5 ** 5)
+print(1_000 == 1000)
