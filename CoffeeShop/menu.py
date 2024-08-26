@@ -1,35 +1,39 @@
+def menu(choices, title='Menu', prompt="Enter your choice (1-{}): "):
+    """
+    This function presents a menu to the user with given choices and returns the selected choice.
+
+    Parameters:
+    choices (list): A list of options to be displayed in the menu.
+    title (str, optional): The title of the menu. Default is 'Menu'.
+    prompt (str, optional): The prompt message to ask the user for their choice. Default is "Enter your choice (1-{}): ".
+
+    Returns:
+    str: The selected choice from the list of options.
+    """
+    print(title)
+    print(len(title) * "+")
+    i = 1
+    for choice in choices:
+        print(i, choice)
+        i += 1
+    choice = int(input(prompt))
+    answer = choices[choice - 1]
+    return answer
+
 drinks = ["Coke", "Pepsi", "Sprite", "Water", "Juice"]
 flavors = ["Mint", "Strawberry", "Lemon", "Grapefruit"]
 toppings = ["Cherry", "Blueberry", "Mango", "Pineapple"]
 
-print("Select a drink:")
-print("+++++ DRINKS +++++++++++")
-i = 1
-for drink in drinks:
-    print(i, drink)
-    i += 1
+drink = menu(drinks)#, "Select a drink:", "Enter the number of your choice:")
+print("You selected:", drink)
 
-drink_choice = int(input("Enter the number of your choice: "))
+flavor = menu(flavors, "Select a flavor:", "Enter the number of your choice:")
+print("You selected:", flavor)
 
-print("\nSelect a flavor:")
-print("+++++ FLAVORS +++++++++++")
-i = 1
-for flavor in flavors:
-    print(i, flavor)
-    i += 1
-
-flavor_choice = int(input("Enter the number of your choice: "))
-
-print("\nSelect a topping:")
-print("+++++ TOPPINGS +++++++++++")
-i = 1
-for topping in toppings:
-    print(i, topping)
-    i += 1
-
-topping_choice = int(input("Enter the number of your choice: "))
+topping = menu(toppings, "Select a topping:", "Enter the number of your choice:")
+print("You selected:", topping)
 
 print("\nYour order:")
-print("Drink:", drinks[drink_choice - 1])
-print("Flavor:", flavors[flavor_choice - 1])
-print("Topping:", toppings[topping_choice - 1])
+print("Drink:", drink)
+print("Flavor:", flavor)
+print("Topping:", topping)
